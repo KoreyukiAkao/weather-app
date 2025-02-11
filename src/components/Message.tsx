@@ -1,7 +1,11 @@
 import React from 'react';
 
-function Message({ text }) {
-  return <p>{text}</p>;
+type Props = {
+  message: string;
+}
+
+function Message({ message }: Props) { 
+  return <p>{message}</p>;
 }
 
 export default Message;
