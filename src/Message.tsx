@@ -1,3 +1,5 @@
+import React from 'react';
+
 function Message({ text }) {
   return <p>{text}</p>;
 }
