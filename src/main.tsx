@@ -17,7 +17,7 @@ if (container) {
         </section>
         <hr />
         <section>
-          <h2>App</h2>
+          <h2>Stacks</h2>
           <App />
         </section>
       </main>

@@ -2,6 +2,10 @@ import React from "react";
 import { useState } from "react";
 import reactLogo from "/images/react.svg";
 import viteLogo from "/images/vite.svg";
+import tsLogo from "/images/typescript.svg";
+import gitLogo from "/images/git.svg";
+import gitHubLogo from "/images/github.png";
+import vercelLogo from "/images/vercel.svg";
 import "../assets/styles/App.css";
 
 function App() {
@@ -15,6 +19,18 @@ function App() {
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={tsLogo} className="logo react" alt="React logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={gitLogo} className="logo git" alt="git logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={gitHubLogo} className="logo react" alt="React logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={vercelLogo} className="logo react" alt="React logo" />
         </a>
       </div>
       <h3>Vite + React</h3>
