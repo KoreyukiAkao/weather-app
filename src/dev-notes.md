@@ -106,3 +106,34 @@ declare module '*.svg' {
 
 // これにより、SVG ファイルをインポートしたときに型エラーが出ないようになる
 ```
+
+## Weatherコンポーネント 分解
+
+```tsx
+// 	Weather という名前の「天気に関連する動き（機能）」を作っている。
+// 「()」 はその動きが何も受け取らないことを意味していて、特に外から情報を受け取るわけではない。
+// 	「=>」 は、実際にその「動き」がどんなものかを定義するための部分。
+const Weather = () => 
+```
+
+```tsx
+// useState という状態を管理する仕組み（フック）を使って、weather という変数に null を初期値として設定し、その値は後から setWeather を使って更新できるようにする。値の型は何でも良い(<any>)。
+const [weather, setWeather] = useState<any>(null);
+```
+
+```tsx
+// 状態管理フックを使って、変数loadingにtrueを初期値として設定。loadingはsetLoadingによって更新される。
+const [loading, setLoading] = useState(true);
+```
+
+```plaintext
+状態管理とは、アプリの中で「今、何が起きているか」を把握し、それを使って画面を更新したりすること。
+```
+
+```tsx
+// 変数errorを作る。初期値は文字列「''」。
+// useStateは今何が起きているかを把握する仕組みで、setErrorを使ってerrorを更新。
+// TypeScriptは初期値がから文字列であることから、errorの値を文字列型（string）と推測する。
+const [error, setError] = useState('');
+
+```
