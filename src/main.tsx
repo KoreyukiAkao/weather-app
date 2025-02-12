@@ -2,8 +2,7 @@ import React from 'react';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './assets/styles/index.css'
-import App from './components/App';
-import Message from './components/Message';
+import {App, Message} from './components';
 
 const container = document.getElementById('root');
 
@@ -13,11 +12,11 @@ if (container) {
     <StrictMode>
       <main>
         <section>
-          {/* App コンポーネントをセクション内に配置 */}
+          <h2>Appコンポーネント</h2>
           <App />
         </section>
         <section>
-          {/* Message コンポーネントを別のセクション内に配置 */}
+          <h2>Messageコンポーネント</h2>
           <Message message="Hello World!" />
         </section>
       </main>
