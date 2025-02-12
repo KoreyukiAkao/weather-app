@@ -1,10 +1,10 @@
-import React from "react";
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import "./assets/styles/index.css";
-import { App, Message, Weather } from "./components";
+import React from 'react';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './assets/styles/index.css'
+import {App, Message} from './components';
 
-const container = document.getElementById("root");
+const container = document.getElementById('root');
 
 if (container) {
   const root = createRoot(container);
@@ -12,13 +12,12 @@ if (container) {
     <StrictMode>
       <main>
         <section>
-          <h2>Weather</h2>
-          <Weather />
-        </section>
-        <hr />
-        <section>
-          <h2>App</h2>
+          <h2>Appコンポーネント</h2>
           <App />
+        </section>
+        <section>
+          <h2>Messageコンポーネント</h2>
+          <Message message="Hello World!" />
         </section>
       </main>
     </StrictMode>
