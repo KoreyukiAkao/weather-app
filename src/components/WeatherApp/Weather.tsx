@@ -1,22 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-const Weather = () => {
-  const [city, setCity] = useState(''); // 検索する都市
+interface WeatherProps {
+  cityName: string;
+}
+
+const Weather: React.FC<WeatherProps> = ({ cityName }) => {
+  const [city, setCity] = useState(""); // 検索する都市
   const [weather, setWeather] = useState<any>(null); // 天気データ
   const [loading, setLoading] = useState(false); // ローディング状態
-  const [error, setError] = useState(''); // エラーメッセージ
+  const [error, setError] = useState(""); // エラーメッセージ
 
   // APIキーの取得
   const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
 
   const handleSearch = async () => {
     setLoading(true);
-    setError('');
+    setError("");
     try {
       const cityName = getCityName(city); // 日本語入力を英語に変換
-      const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric&lang=ja`
-      );
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric&lang=ja`);
       const data = await response.json();
       if (response.ok) {
         setWeather(data); // データをstateに保存
@@ -24,7 +26,7 @@ const Weather = () => {
         setError(data.message); // エラーメッセージを保存
       }
     } catch (err) {
-      setError('天気データの取得に失敗しました'); // エラーハンドリング
+      setError("天気データの取得に失敗しました"); // エラーハンドリング
     } finally {
       setLoading(false);
     }
@@ -33,9 +35,9 @@ const Weather = () => {
   // 日本語の都市名を英語に変換する関数（例: 長野 → Nagano）
   const getCityName = (city: string) => {
     const cityMap: { [key: string]: string } = {
-      長野: 'Nagano',
-      東京: 'Tokyo',
-      大阪: 'Osaka',
+      長野: "Nagano",
+      東京: "Tokyo",
+      大阪: "Osaka",
       // 他の都市名を追加
     };
 
@@ -44,12 +46,7 @@ const Weather = () => {
 
   return (
     <div>
-      <input
-        type="text"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-        placeholder="都市名を入力"
-      />
+      <input type="text" value={city} onChange={(e) => setCity(e.target.value)} placeholder="都市名を入力" />
       <button onClick={handleSearch}>検索</button>
 
       {loading && <div>読み込み中...</div>}
