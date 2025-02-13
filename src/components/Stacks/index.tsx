@@ -1,42 +1,32 @@
 import { useState } from "react";
-import reactLogo from "/images/react.svg";
-import viteLogo from "/images/vite.svg";
-import tsLogo from "/images/typescript.svg";
-import gitLogo from "/images/git.svg";
-import gitHubLogo from "/images/github.png";
-import vercelLogo from "/images/vercel.svg";
-// import "../../assets/styles/stacks.css";
 
 function Stacks() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div>
         <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+          <img src="/images/vite.svg" className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+          <img src="/images/react.svg" className="logo react" alt="React logo" />
         </a>
         <a href="https://react.dev" target="_blank">
-          <img src={tsLogo} className="logo react" alt="React logo" />
+          <img src="/images/typescript.svg" className="logo react" alt="React logo" />
         </a>
         <a href="https://react.dev" target="_blank">
-          <img src={gitLogo} className="logo git" alt="git logo" />
+          <img src="/images/git.svg" className="logo git" alt="git logo" />
         </a>
         <a href="https://react.dev" target="_blank">
-          <img src={gitHubLogo} className="logo react" alt="React logo" />
+          <img src="/images/github.png" className="logo react" alt="React logo" />
         </a>
         <a href="https://react.dev" target="_blank">
-          <img src={vercelLogo} className="logo react" alt="React logo" />
+          <img src="/images/vercel.svg" className="logo react" alt="React logo" />
         </a>
       </div>
-      <h3>Vite + React</h3>
+      <h3>Vite + React + TypeScript</h3>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </>
   );
 }
 
 export default Stacks;
-
