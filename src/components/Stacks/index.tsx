@@ -5,10 +5,9 @@ import tsLogo from "/images/typescript.svg";
 import gitLogo from "/images/git.svg";
 import gitHubLogo from "/images/github.png";
 import vercelLogo from "/images/vercel.svg";
-// import "../assets/styles/App.css";
-import "./assets/styles/App.css";
+// import "../../assets/styles/stacks.css";
 
-function App() {
+function Stacks() {
   const [count, setCount] = useState(0);
 
   return (
@@ -39,5 +38,5 @@ function App() {
   );
 }
 
-export default App;
+export default Stacks;
 
