@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import WeatherSearch from "../WeatherSearch";
+import WeatherSearch from "./WeatherSearch";
 import Weather from "./Weather";
 
 const WeatherApp = () => {
