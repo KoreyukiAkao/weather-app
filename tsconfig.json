@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",  // JSX を React 17以降の新しい変換にする
+    "module": "esnext",   // モジュールの種類を ESNext に設定
+    "target": "esnext",   // コンパイル後のターゲットを最新の JavaScript に
+    "strict": true,       // 厳密な型チェックを有効にする
+    "skipLibCheck": true, // 型定義ファイルのチェックをスキップ
+    "typeRoots": ["./node_modules/@types", "./src/types"], // 型定義の検索パス
+    "esModuleInterop": true,  // CommonJSモジュールをES6モジュールのようにインポートできるようにする
+    "moduleResolution": "node"
+  }
+}
