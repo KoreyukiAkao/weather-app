@@ -54,7 +54,7 @@ const Weather: React.FC<WeatherProps> = ({ cityName }) => {
 
       {weather && !loading && !error && (
         <div>
-          <h1>{weather.name}の天気</h1>
+          <h2>{weather.name}の天気</h2>
           <p>気温: {weather.main.temp}°C</p>
           <p>天気: {weather.weather[0].description}</p>
           <p>湿度: {weather.main.humidity}%</p>
