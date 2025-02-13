@@ -1,3 +1,1 @@
-export { default as App } from './App';
-export { default as Message } from './Message';
-export { default as Weather } from './Weather';
+export { default as WeatherApp } from "./WeatherApp";

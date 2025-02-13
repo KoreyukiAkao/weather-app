@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import reactLogo from "/images/react.svg";
 import viteLogo from "/images/vite.svg";
@@ -6,7 +5,8 @@ import tsLogo from "/images/typescript.svg";
 import gitLogo from "/images/git.svg";
 import gitHubLogo from "/images/github.png";
 import vercelLogo from "/images/vercel.svg";
-import "../assets/styles/App.css";
+// import "../assets/styles/App.css";
+import "./assets/styles/App.css";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -34,12 +34,6 @@ function App() {
         </a>
       </div>
       <h3>Vite + React</h3>
-      {/* <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div> */}
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </>
   );
