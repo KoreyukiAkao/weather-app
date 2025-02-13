@@ -137,3 +137,6 @@ const [loading, setLoading] = useState(true);
 const [error, setError] = useState('');
 
 ```
+## React ルール
+### 命名規則
+- 大文字から始める
