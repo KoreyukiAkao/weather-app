@@ -1,3 +1,9 @@
+@use "../global/" as *;
+@use "sass:map";
+/*------------------------------
+概要：Stuck用
+------------------------------*/
+
 #root {
   max-width: 1280px;
   margin: 0 auto;

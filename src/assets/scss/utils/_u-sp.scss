@@ -1,0 +1,25 @@
+@use "../global/" as *;
+@use "sass:map";
+/*------------------------------
+概要：SP時の表示設定
+------------------------------*/
+
+.u-sp__off {
+  @include mq("lg") {
+    display: block;
+  }
+
+  @include mq("md") {
+    display: none;
+  }
+}
+
+.u-sp__on {
+  @include mq("lg") {
+    display: none;
+  }
+
+  @include mq("md") {
+    display: block;
+  }
+}

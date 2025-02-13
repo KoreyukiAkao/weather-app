@@ -1,9 +1,10 @@
 import React from "react";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App";
-import "./assets/styles/index.css";
+import App from "./components/Stacks";
+import "./assets/css/style.css";
 import { WeatherApp } from "./components";
+import { Stacks } from "./components";
 
 const container = document.getElementById("root");
 
@@ -12,7 +13,7 @@ if (container) {
   root.render(
     <StrictMode>
       <main>
-        <h1>Weather App</h1>
+      <h1>Weather App</h1>
         <section>
           <h2>Weather Component</h2>
           <WeatherApp />

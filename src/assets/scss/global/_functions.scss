@@ -1,0 +1,31 @@
+@use './variables' as *;
+@use "sass:map";
+@use 'sass:math';
+
+
+// rem変換
+@function rem($px, $rootFontSize: map.get($fontSize, root)) {
+  @return (math.div($px, $rootFontSize)) * 1rem; // pxをremに変換して返す
+}
+
+
+// 幅に応じたフォントサイズを計算する関数（375pxビューポート用）
+@function vws($min, $size, $max, $vp: map.get($designWidth, sp)) {
+  $min: math.div($min, 16) * 1rem; // $min を rem 単位に変換
+  $max: math.div($max, 16) * 1rem; // $max を rem 単位に変換
+  $num: math.div(100, $vp) * 1vw; // ビューポート幅に対する 1vw の値を計算
+  $size_vw: $num * $size; // フォントサイズを vw 単位で計算
+  @return clamp($min, $size_vw, $max); // フォントサイズを clamp で制約して返す
+}
+
+// 幅に応じたフォントサイズを計算する関数（1440pxビューポート用）
+@function vwp($min, $size, $max, $vp: map.get($designWidth, pc)) {
+  $min: math.div($min, 16) * 1rem; // $min を rem 単位に変換
+  $max: math.div($max, 16) * 1rem; // $max を rem 単位に変換
+  $num: math.div(100, $vp) * 1vw; // ビューポート幅に対する 1vw の値を計算
+  $size_vw: $num * $size; // フォントサイズを vw 単位で計算
+  @return clamp($min, $size_vw, $max); // フォントサイズを clamp で制約して返す
+}
+
+// 例: 関数の使用方法
+// width: vwp(800, 1100, 1200);

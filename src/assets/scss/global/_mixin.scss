@@ -1,0 +1,84 @@
+@use "./variables" as v;
+@use "./functions" as f;
+@use "sass:map";
+
+//メディアクエリー
+@mixin mq($key) {
+  @media #{map.get(v.$breakpoints, $key)} {
+    @content;
+  }
+}
+
+//フォーカス
+@mixin focus {
+  outline: 2px solid map.get(v.$color, focus);
+  border-radius: 5px;
+}
+
+// ヘッダー高さ
+@mixin header-height {
+  padding-top: map.get(v.$header-height, lg);
+
+  @include mq("md") {
+    padding-top: map.get(v.$header-height, md);
+  }
+
+  @include mq("sm") {
+    padding-top: map.get(v.$header-height, sm);
+  }
+}
+
+// コンタクトページヘッダー高さ
+@mixin header-height-contact {
+  padding-top: map.get(v.$header-height-contact, lg);
+
+  @include mq("md") {
+    padding-top: map.get(v.$header-height-contact, md);
+  }
+
+  @include mq("sm") {
+    padding-top: map.get(v.$header-height-contact, sm);
+  }
+}
+
+// スティッキーポジション
+@mixin sticky-position {
+  top: map.get(v.$header-height, lg);
+
+  @include mq("md") {
+    top: map.get(v.$header-height, md);
+  }
+
+  @include mq("sm") {
+    top: map.get(v.$header-height, sm);
+  }
+
+}
+
+// コンタクトページのスティッキーポジション
+@mixin sticky-position-contact {
+  top: map.get(v.$header-height-contact, lg);
+
+  @include mq("md") {
+    top: map.get(v.$header-height-contact, md);
+  }
+
+  @include mq("sm") {
+    top: map.get(v.$header-height-contact, sm);
+  }
+}
+
+// チェックボックスサイズ
+@mixin checkbox {
+  width: 31px;
+  height: 31px;
+}
+
+// チェックドサイズ
+@mixin checkbox-checked {
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  background: map.get(v.$color, main);
+  left: 7px;
+}

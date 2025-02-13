@@ -1,0 +1,172 @@
+//ブレイクポイントsm,md,lg,xl,xxl,sp,pc
+$breakpoints: (
+  "sm": "(max-width: 640px)",
+  "md": "(max-width: 800px)",
+  "lg": "(max-width: 1024px)",
+  "xl": "(min-width: 1280px)",
+  "fe": "(max-width: 800px)",//feature
+  "price": "(min-width: 800px)",//price
+
+);
+
+//デザイン幅
+$designWidth: (
+  "pc": 1440,
+  "sp": 375,
+);
+
+// インナー幅
+$innerMaxWidth: (
+  //インナー幅 + 両パディング
+  "pc": calc(1200px + (2rem * 2)),
+  "sp": 100%,
+);
+
+// インナーパディング
+$innerPadding: (
+  "pc": 2rem,
+  "sp": 30px,
+);
+
+//font-family
+$fontFamily: (
+  "base": ("游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif),
+  "marcellus": ('Marcellus', sans-serif),
+  "yu-min": ("游明朝", "YuMincho", serif),
+  "noto-sans": ("Noto Sans JP", sans-serif),
+  "noto-serif": ("Noto Serif JP", system-ui),
+  "parisienne": ("Parisienne", cursive),
+);
+
+// font-size
+$fontSize: (
+  // root
+  "root": 16,
+  // base
+  "base": 16,
+  "base-sp": 12,
+  // heading
+  "heading-sm": 16,
+  "heading-md": 20,
+  "heading-sm__sp": 12,
+  "heading-md__sp": 14,
+  // note
+  "note": 14,
+  "note-sp": 10,
+);
+
+//font-weight
+$fontWeight: (
+  // base
+  "base": 400,
+  // heading
+  "heading-sm": bold,
+  "heading-md": bold,
+  // note
+  "note": regular,
+);
+
+//line-height
+$lineHeight: (
+  "base": 1.5,
+);
+
+//letter-spacing
+$letterSpacing: (
+  "base": .1em,
+);
+
+
+//色
+$color: (
+  // キーカラー
+  "main": #CA7F13,
+  
+  // アクセント
+  "accent1": #54372D,
+  "accent2": #949E33,
+  "accent3": #CA7F1314,
+  "accent4": #464646,
+  "accent5": #D4CEBE,
+
+  // フォントカラー
+  "font-base": #333,
+  "font-nega": #fff,
+  "font-category": #54372D33,
+  "font-disable": #707070,
+
+  // ボタン
+  "btn-base": #fff,
+  "btn-hover": #FFEE56,
+
+  // リンク
+  "link": #67B0C7,
+
+
+  // グラデーション
+  "gradation": linear-gradient(180deg, #000000 0%, #e5e5e5 100%),
+
+  // メニューバー
+  "menu-bar": #000,
+
+  // ボーダー
+  "border1":#54372D,
+  "border2":#CA7F13,
+  "border3":#949E33,
+
+  // 背景
+  "bg1":#F9F8F6,
+  "bg2":#D4CEBE,
+  "bg3":#EDE9E4,
+
+  // フォーカス
+  "focus":1.5px solid #54372D,
+  "focus-error":1px solid #CE2073,
+
+  // form
+  "form-bg":#F5F5F5,
+  "form-bg__focus":#E9F6F8,
+  "form-bg__error":#FFF0F7,
+  "form-placeholder":#ccc,
+  "form-radio__checked":#9ED0E0,
+  "form-focus":1px solid #9ED0E0,
+  "form-border": lightgrey,
+  "form-check-mark": #67B0C7,
+  "form-select__bg--mark": #9ED0E0,
+  "form-select__bg--mark-error": #CE2073,
+  "form-label__required":#CE2073,
+
+  // スクロールバー
+  "scrollbar-track": lightgrey,
+  "scrollbar-thumb": red,
+);
+
+//header-height
+$header-height: (
+  "lg": 172px, 
+  "md": 108px, 
+  "sm": 80px, 
+);
+
+//header-height
+$header-height-contact: (
+  "lg": 160px, 
+  "md": 108px, 
+  "sm": 80px, 
+);
+
+//z-index
+$z-index: (
+);
+
+//余白
+$space: (
+);
+
+//トランシション
+$transition: (
+);
+
+//オパシティ
+$opacity: (
+);
