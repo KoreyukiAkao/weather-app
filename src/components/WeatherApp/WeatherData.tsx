@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-interface WeatherProps {
+interface WeatherDataProps {
   cityName: string;
 }
 
-const Weather: React.FC<WeatherProps> = ({ cityName }) => {
-  const [city, setCity] = useState(""); // 検索する都市
+const WeatherData: React.FC<WeatherDataProps> = ({ cityName }) => {
   const [weather, setWeather] = useState<any>(null); // 天気データ
   const [loading, setLoading] = useState(false); // ローディング状態
   const [error, setError] = useState(""); // エラーメッセージ
@@ -13,24 +12,32 @@ const Weather: React.FC<WeatherProps> = ({ cityName }) => {
   // APIキーの取得
   const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
 
-  const handleSearch = async () => {
-    setLoading(true);
-    setError("");
-    try {
-      const cityName = getCityName(city); // 日本語入力を英語に変換
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric&lang=ja`);
-      const data = await response.json();
-      if (response.ok) {
-        setWeather(data); // データをstateに保存
-      } else {
-        setError(data.message); // エラーメッセージを保存
+  useEffect(() => {
+    const fetchWeather = async () => {
+      if (!cityName) return;
+
+      setLoading(true);
+      setError("");
+      try {
+        const cityNameToUse = getCityName(cityName); // 日本語入力を英語に変換
+        const response = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=${cityNameToUse}&appid=${apiKey}&units=metric&lang=ja`
+        );
+        const data = await response.json();
+        if (response.ok) {
+          setWeather(data); // データをstateに保存
+        } else {
+          setError(data.message || "データの取得に失敗しました"); // エラーメッセージを保存
+        }
+      } catch (err) {
+        setError("天気データの取得に失敗しました"); // エラーハンドリング
+      } finally {
+        setLoading(false);
       }
-    } catch (err) {
-      setError("天気データの取得に失敗しました"); // エラーハンドリング
-    } finally {
-      setLoading(false);
-    }
-  };
+    };
+
+    fetchWeather();
+  }, [cityName]); // cityNameが変更されるたびにAPIを呼び出す
 
   // 日本語の都市名を英語に変換する関数（例: 長野 → Nagano）
   const getCityName = (city: string) => {
@@ -46,9 +53,6 @@ const Weather: React.FC<WeatherProps> = ({ cityName }) => {
 
   return (
     <div>
-      <input type="text" value={city} onChange={(e) => setCity(e.target.value)} placeholder="都市名を入力" />
-      <button onClick={handleSearch}>検索</button>
-
       {loading && <div>読み込み中...</div>}
       {error && <div>{error}</div>}
 
@@ -64,4 +68,4 @@ const Weather: React.FC<WeatherProps> = ({ cityName }) => {
   );
 };
 
-export default Weather;
+export default WeatherData;

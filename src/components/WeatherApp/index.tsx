@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import WeatherSearch from "./WeatherSearch";
-import Weather from "./Weather";
+import WeatherData from "./WeatherData";
 
 const WeatherApp = () => {
   const [cityName, setCityName] = useState("");
@@ -12,7 +12,7 @@ const WeatherApp = () => {
   return (
     <div>
       <WeatherSearch onSelectCity={handleSelectCity} />
-      {cityName && <Weather cityName={cityName} />}
+      {cityName && <WeatherData cityName={cityName} />}
     </div>
   );
 };
